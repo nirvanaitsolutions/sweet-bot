@@ -1,0 +1,30 @@
+{
+  "name": "sweet-bot",
+  "version": "1.0.0",
+  "description": "A discord bot to communicate with Steem-Engine",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "forever start bot.js",
+    "dev": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirvanaitsolutions/sweet-bot.git"
+  },
+  "keywords": [
+    "steem",
+    "tip",
+    "swapsteem"
+  ],
+  "author": "Aneilpatel05",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nirvanaitsolutions/sweet-bot/issues"
+  },
+  "homepage": "https://github.com/nirvanaitsolutions/sweet-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "sscjs": "0.0.7"
+  }
+}
