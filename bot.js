@@ -196,12 +196,12 @@ client.on('message', (msg) => {
         var end_result = [];
 
         metrics.forEach((element) => {
-          end_result.push(`**${element.symbol}:** \`${element.quantity}\``);
+          end_result.push(`- \`${element.quantity}  for  \`${element.price} STEEMP per \`${symbol}\'  \n`);
 
         });
 
         embed = new Discord.RichEmbed()
-        .setTitle('Buy Orders:')
+        .setTitle(`Buy Orders for \`${symbol}:`)
         .setDescription(`${end_result.join(`\n`)}`)
         .setColor(white)
         msg.channel.send({
@@ -232,12 +232,12 @@ client.on('message', (msg) => {
         var end_result = [];
 
         metrics.forEach((element) => {
-          end_result.push(`**${element.symbol}:** \`${element.quantity}\``);
+          end_result.push(`- \`${element.quantity}  for  \`${element.price} STEEMP per  \`${symbol}\  \n `);
 
         });
         
         embed = new Discord.RichEmbed()
-          .setTitle('Highest Sell Offers:')
+          .setTitle(`Sell Orders for \`${symbol}:`)
           .setDescription(`${end_result.join(`\n`)}`)
           .setColor(white)
         msg.channel.send({
