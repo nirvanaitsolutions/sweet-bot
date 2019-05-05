@@ -190,21 +190,18 @@ client.on('message', (msg) => {
       ssc.find('market', 'buyBook', {symbol: `${symbol}`}, 1000, 0, '', false).then(async (metrics) => {
 
         if (metrics.length === 0) {
-          error(`Could not find **Buy** Offers with token \`${symbol}\``)
+          error(`Could not find **Buy** Orders with token \`${symbol}\``)
           return;
         }
-
-        metrics.sort((a, b) => (a.price > b.price) ? 1 : -1)
-
         var end_result = [];
 
-        for (var i = 0; i < 3; i++) {
-        end_result.push(`**${metrics[i].symbol}:** \`${metrics[i].price}\``);
-        }
-        
+        metrics.forEach((element) => {
+          end_result.push(`**${element.symbol}:** \`${element.quantity}\``);
+
+        });
 
         embed = new Discord.RichEmbed()
-        .setTitle('Lowest Buy Offers:')
+        .setTitle('Buy Orders:')
         .setDescription(`${end_result.join(`\n`)}`)
         .setColor(white)
         msg.channel.send({
@@ -228,17 +225,16 @@ client.on('message', (msg) => {
         console.log(metrics)
 
         if (metrics.length === 0) {
-          error(`Could not find **Sell** Offers with token \`${symbol}\``)
+          error(`Could not find **Sell** Orders with token \`${symbol}\``)
           return;
         }
         
-        metrics.sort((a, b) => (a.price > b.price) ? -1 : 1)
-
         var end_result = [];
 
-        for (var i = 0; i < 3; i++) {
-        end_result.push(metrics ? `**${metrics[i].symbol}:** \`${metrics[i].price}\`` : '');
-        }
+        metrics.forEach((element) => {
+          end_result.push(`**${element.symbol}:** \`${element.quantity}\``);
+
+        });
         
         embed = new Discord.RichEmbed()
           .setTitle('Highest Sell Offers:')
