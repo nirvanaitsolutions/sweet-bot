@@ -245,7 +245,7 @@ client.on('message', (msg) => {
         })
       })
     }
-    /**
+    
     if(command === 'buy'){
       if (args.length === 0) {
         error(`You didn't enter correct params\n\nUsage: \`!buy [your username]  [amount] [symbol] [price]\``)
@@ -326,7 +326,7 @@ client.on('message', (msg) => {
 )
       .setColor(white)
       msg.author.send(embed)
-    } **/
+    } 
 
 }
 
